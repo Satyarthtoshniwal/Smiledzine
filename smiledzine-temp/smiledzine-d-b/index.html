@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smiledzine Luxe | Premium Dental Studio</title>
+<meta name="description" content="Smiledzine Luxe — a premium dental studio offering implants, cosmetic dentistry, and bespoke smile design. Reserve your consultation.">
+<meta name="keywords" content="dental clinic, luxury dentist, dental implants, cosmetic dentistry, smile design">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♦</text></svg>">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT:'#10243E', dark:'#081729' },
+          gold: { DEFAULT:'#C9A24B', light:'#E4D3A1' },
+          sage: '#8FA88E',
+          offwhite: '#F7F5F0'
+        },
+        fontFamily: { display:['Cormorant Garamond','serif'], body:['Inter','sans-serif'] }
+      }
+    }
+  }
+</script>
+<style>
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif; background:#F7F5F0; color:#10243E; font-weight:300;}
+  .font-display{font-family:'Cormorant Garamond',serif;}
+  .reveal{opacity:0; transform:translateY(20px); transition:opacity 1s ease, transform 1s ease;}
+  .reveal.show{opacity:1; transform:translateY(0);}
+  .hairline{border-color:rgba(16,36,62,.12);}
+  .gold-line{width:48px; height:1px; background:#C9A24B;}
+  .card-fade{transition:box-shadow .5s ease, transform .5s ease;}
+  .card-fade:hover{box-shadow:0 30px 60px -20px rgba(16,36,62,.2); transform:translateY(-4px);}
+  .gallery-item img{transition:transform 1.2s cubic-bezier(.16,1,.3,1), filter .6s ease;}
+  .gallery-item:hover img{transform:scale(1.06);}
+  .carousel-track{transition:transform .8s cubic-bezier(.65,0,.35,1);}
+  .btn-outline{transition:all .4s ease;}
+  .btn-outline:hover{letter-spacing:.12em;}
+  input:focus,textarea:focus,select:focus{outline:none; border-color:#C9A24B;}
+  @media (prefers-reduced-motion: reduce){ .reveal{transition:none; opacity:1; transform:none;} }
+</style>
+</head>
+<body class="antialiased">
+
+<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-offwhite/95 backdrop-blur border-b hairline">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+    <a href="#home" class="font-display text-2xl tracking-wide text-navy">SMILEDZINE <span class="text-gold text-sm align-top tracking-[0.3em]">LUXE</span></a>
+    <nav class="hidden md:flex items-center gap-10 text-xs uppercase tracking-[0.15em] text-navy/80">
+      <a href="#home" class="hover:text-gold transition">Home</a>
+      <a href="#about" class="hover:text-gold transition">About</a>
+      <a href="#services" class="hover:text-gold transition">Services</a>
+      <a href="#gallery" class="hover:text-gold transition">Gallery</a>
+      <a href="#testimonials" class="hover:text-gold transition">Testimonials</a>
+      <a href="#contact" class="hover:text-gold transition">Contact</a>
+    </nav>
+    <a href="#appointment" class="hidden md:inline-flex border border-navy text-navy px-6 py-2.5 text-xs uppercase tracking-[0.15em] hover:bg-navy hover:text-white transition btn-outline">Reserve a Visit</a>
+    <button id="menuBtn" class="md:hidden text-navy" aria-label="Open menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden bg-offwhite border-t hairline px-6 py-4 flex flex-col gap-4 text-navy uppercase text-xs tracking-[0.15em]">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
+    <a href="#appointment" class="border border-navy text-center px-5 py-2.5">Reserve a Visit</a>
+  </div>
+</header>
+
+<!-- HOME -->
+<section id="home" class="pt-40 pb-28 relative">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <div class="gold-line mb-6"></div>
+      <p class="uppercase tracking-[0.25em] text-xs text-gold mb-4">A Private Dental Studio</p>
+      <h1 class="font-display text-6xl md:text-7xl leading-[1.05] text-navy font-medium">Smile design, <span class="italic">quietly</span> perfected.</h1>
+      <p class="mt-7 text-navy/60 max-w-md leading-relaxed">Smiledzine Luxe is an appointment-only studio for implants, veneers and bespoke smile design — unhurried, precise, and entirely yours.</p>
+      <div class="mt-10 flex flex-wrap gap-5">
+        <a href="#appointment" class="bg-navy hover:bg-navy-dark text-white px-8 py-4 text-xs uppercase tracking-[0.15em] transition btn-outline">Reserve a Consultation</a>
+        <a href="#services" class="border border-navy/30 text-navy px-8 py-4 text-xs uppercase tracking-[0.15em] hover:border-navy transition btn-outline">Our Services</a>
+      </div>
+      <div class="mt-14 flex gap-12">
+        <div><p class="font-display text-4xl text-navy">20+</p><p class="text-[11px] uppercase tracking-[0.15em] text-navy/50 mt-1">Years Refined</p></div>
+        <div><p class="font-display text-4xl text-navy">3,100+</p><p class="text-[11px] uppercase tracking-[0.15em] text-navy/50 mt-1">Smiles Designed</p></div>
+        <div><p class="font-display text-4xl text-navy">By Appt.</p><p class="text-[11px] uppercase tracking-[0.15em] text-navy/50 mt-1">Only</p></div>
+      </div>
+    </div>
+    <div class="relative">
+      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1000&auto=format&fit=crop" alt="Smiledzine Luxe studio interior" class="w-full h-[520px] object-cover">
+      <div class="absolute -bottom-8 -left-8 bg-navy text-offwhite p-6 w-60 hidden sm:block">
+        <p class="font-display text-3xl text-gold">01</p>
+        <p class="text-xs uppercase tracking-[0.15em] mt-2 text-offwhite/70">Consultation<br>begins the design</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-28 bg-navy text-offwhite">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-16 items-center">
+    <div class="reveal">
+      <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1000&auto=format&fit=crop" alt="Studio profile" class="w-full h-[440px] object-cover">
+    </div>
+    <div class="reveal">
+      <div class="gold-line mb-6"></div>
+      <p class="uppercase tracking-[0.25em] text-xs text-gold mb-4">About Us</p>
+      <h2 class="font-display text-4xl font-medium mb-6">The clinic profile</h2>
+      <p class="text-offwhite/60 leading-relaxed mb-8">Two decades of refining a single craft — the science and art of the smile. Smiledzine Luxe was founded on the belief that dental care, done properly, is closer to bespoke tailoring than a routine checkup.</p>
+      <div class="grid sm:grid-cols-2 gap-8 border-t border-offwhite/15 pt-8">
+        <div>
+          <p class="font-display text-xl text-gold mb-2">Our Vision</p>
+          <p class="text-sm text-offwhite/50 leading-relaxed">Dentistry as a quiet luxury — precise, unrushed, entirely discreet.</p>
+        </div>
+        <div>
+          <p class="font-display text-xl text-gold mb-2">Our Mission</p>
+          <p class="text-sm text-offwhite/50 leading-relaxed">Every treatment plan designed around the individual, never a template.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="py-28">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="text-center max-w-xl mx-auto mb-20 reveal">
+      <div class="gold-line mx-auto mb-6"></div>
+      <p class="uppercase tracking-[0.25em] text-xs text-gold mb-4">Services</p>
+      <h2 class="font-display text-4xl text-navy font-medium">A considered practice</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-navy/10">
+      <div class="reveal card-fade bg-offwhite p-9">
+        <p class="font-display text-3xl text-gold mb-4">01</p>
+        <h3 class="font-display text-2xl text-navy mb-2">Dental Implants</h3>
+        <p class="text-sm text-navy/55 leading-relaxed">Guided implant surgery for results indistinguishable from natural teeth.</p>
+      </div>
+      <div class="reveal card-fade bg-offwhite p-9">
+        <p class="font-display text-3xl text-gold mb-4">02</p>
+        <h3 class="font-display text-2xl text-navy mb-2">Smile Design</h3>
+        <p class="text-sm text-navy/55 leading-relaxed">Veneers and whitening planned around your face, not a catalogue.</p>
+      </div>
+      <div class="reveal card-fade bg-offwhite p-9">
+        <p class="font-display text-3xl text-gold mb-4">03</p>
+        <h3 class="font-display text-2xl text-navy mb-2">Root Canal Therapy</h3>
+        <p class="text-sm text-navy/55 leading-relaxed">Microscope-guided endodontics, done gently, in a single visit.</p>
+      </div>
+      <div class="reveal card-fade bg-offwhite p-9">
+        <p class="font-display text-3xl text-gold mb-4">04</p>
+        <h3 class="font-display text-2xl text-navy mb-2">Family Dentistry</h3>
+        <p class="text-sm text-navy/55 leading-relaxed">Preventive care and check-ups for every generation of your family.</p>
+      </div>
+      <div class="reveal card-fade bg-offwhite p-9">
+        <p class="font-display text-3xl text-gold mb-4">05</p>
+        <h3 class="font-display text-2xl text-navy mb-2">Orthodontics</h3>
+        <p class="text-sm text-navy/55 leading-relaxed">Discreet aligners for a straighter smile without announcing the process.</p>
+      </div>
+      <div class="reveal card-fade bg-offwhite p-9">
+        <p class="font-display text-3xl text-gold mb-4">06</p>
+        <h3 class="font-display text-2xl text-navy mb-2">Emergency Care</h3>
+        <p class="text-sm text-navy/55 leading-relaxed">Priority same-day slots reserved for urgent concerns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-28 bg-offwhite">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="text-center max-w-xl mx-auto mb-20 reveal">
+      <div class="gold-line mx-auto mb-6"></div>
+      <p class="uppercase tracking-[0.25em] text-xs text-gold mb-4">Gallery</p>
+      <h2 class="font-display text-4xl text-navy font-medium">Inside the studio</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-2">
+      <div class="gallery-item overflow-hidden reveal"><img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover grayscale-[10%]" alt="Treatment suite"></div>
+      <div class="gallery-item overflow-hidden reveal"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover grayscale-[10%]" alt="Consultation room"></div>
+      <div class="gallery-item overflow-hidden reveal"><img src="https://images.unsplash.com/photo-1600091166971-7f9faad6c1e2?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover grayscale-[10%]" alt="Reception lounge"></div>
+      <div class="gallery-item overflow-hidden reveal"><img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=600&auto=format&fit=crop" class="w-full h-64 object-cover grayscale-[10%]" alt="Instruments"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="py-28 bg-navy text-offwhite overflow-hidden">
+  <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+    <div class="gold-line mx-auto mb-6 reveal"></div>
+    <p class="uppercase tracking-[0.25em] text-xs text-gold mb-4 reveal">Testimonials</p>
+    <h2 class="font-display text-4xl font-medium mb-16 reveal">Words from our patients</h2>
+    <div class="relative">
+      <div id="testiTrack" class="carousel-track flex">
+        <div class="min-w-full px-6">
+          <p class="font-display text-3xl italic text-offwhite/85 leading-snug">"Every detail was considered. It felt less like a dental visit and more like a fitting."</p>
+          <p class="mt-8 text-xs uppercase tracking-[0.15em] text-gold">Vikram Rao</p>
+        </div>
+        <div class="min-w-full px-6">
+          <p class="font-display text-3xl italic text-offwhite/85 leading-snug">"The implant work is flawless — nobody can tell, which is exactly the point."</p>
+          <p class="mt-8 text-xs uppercase tracking-[0.15em] text-gold">Ananya Kapoor</p>
+        </div>
+        <div class="min-w-full px-6">
+          <p class="font-display text-3xl italic text-offwhite/85 leading-snug">"Discreet, precise, unhurried. Worth every rupee of the consultation."</p>
+          <p class="mt-8 text-xs uppercase tracking-[0.15em] text-gold">Farhan Ali</p>
+        </div>
+      </div>
+      <div class="flex justify-center gap-2 mt-12">
+        <button class="dot w-8 h-px bg-gold" data-i="0"></button>
+        <button class="dot w-8 h-px bg-offwhite/30" data-i="1"></button>
+        <button class="dot w-8 h-px bg-offwhite/30" data-i="2"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment" class="py-28">
+  <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+    <div class="gold-line mx-auto mb-6 reveal"></div>
+    <p class="uppercase tracking-[0.25em] text-xs text-gold mb-4 reveal">Appointment</p>
+    <h2 class="font-display text-4xl text-navy font-medium mb-4 reveal">Reserve your consultation</h2>
+    <p class="text-navy/55 mb-14 reveal">No account required — our studio coordinator will confirm by phone.</p>
+    <form class="reveal grid sm:grid-cols-2 gap-6 text-left" onsubmit="event.preventDefault(); alert('Thank you. Our coordinator will call to confirm.'); this.reset();">
+      <input required placeholder="Full Name" class="border-b hairline bg-transparent px-1 py-3 focus:border-gold">
+      <input required type="tel" placeholder="Phone Number" class="border-b hairline bg-transparent px-1 py-3 focus:border-gold">
+      <select class="border-b hairline bg-transparent px-1 py-3 focus:border-gold">
+        <option>Dental Implants</option><option>Smile Design</option><option>Root Canal Therapy</option><option>Family Dentistry</option><option>Orthodontics</option><option>Emergency Care</option>
+      </select>
+      <input required type="date" class="border-b hairline bg-transparent px-1 py-3 focus:border-gold">
+      <textarea placeholder="Anything we should know?" rows="3" class="sm:col-span-2 border-b hairline bg-transparent px-1 py-3 focus:border-gold"></textarea>
+      <button class="sm:col-span-2 bg-navy hover:bg-navy-dark text-white py-4 text-xs uppercase tracking-[0.15em] transition btn-outline">Request Consultation</button>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-28 bg-offwhite">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-2 gap-16">
+    <div class="reveal">
+      <div class="gold-line mb-6"></div>
+      <p class="uppercase tracking-[0.25em] text-xs text-gold mb-4">Contact</p>
+      <h2 class="font-display text-4xl text-navy font-medium mb-8">Get in touch</h2>
+      <form class="grid gap-5" onsubmit="event.preventDefault(); alert('Thank you — we will reply shortly.'); this.reset();">
+        <input required placeholder="Your Name" class="border-b hairline bg-transparent px-1 py-3 focus:border-gold">
+        <input required type="email" placeholder="Email Address" class="border-b hairline bg-transparent px-1 py-3 focus:border-gold">
+        <textarea required placeholder="Your Message" rows="4" class="border-b hairline bg-transparent px-1 py-3 focus:border-gold"></textarea>
+        <button class="bg-navy hover:bg-navy-dark text-white py-4 text-xs uppercase tracking-[0.15em] transition btn-outline">Send Message</button>
+      </form>
+    </div>
+    <div class="reveal space-y-2">
+      <div class="h-64 mb-6">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=75.30%2C19.86%2C75.34%2C19.90&layer=mapnik" class="w-full h-full border-0 grayscale" loading="lazy"></iframe>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-navy/10 text-sm">
+        <div class="bg-offwhite p-6"><p class="text-navy mb-1 uppercase text-xs tracking-[0.15em]">Address</p><p class="text-navy/55 font-display text-lg">7 Crescent Ave, Aurangabad</p></div>
+        <div class="bg-offwhite p-6"><p class="text-navy mb-1 uppercase text-xs tracking-[0.15em]">Phone</p><p class="text-navy/55 font-display text-lg">+91 90000 11223</p></div>
+        <div class="bg-offwhite p-6"><p class="text-navy mb-1 uppercase text-xs tracking-[0.15em]">Email</p><p class="text-navy/55 font-display text-lg">studio@smiledzineluxe.com</p></div>
+        <div class="bg-offwhite p-6"><p class="text-navy mb-1 uppercase text-xs tracking-[0.15em]">Hours</p><p class="text-navy/55 font-display text-lg">By appointment only</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-navy-dark text-offwhite/50 py-14">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
+    <p class="font-display text-2xl text-offwhite tracking-wide">SMILEDZINE <span class="text-gold text-xs align-top tracking-[0.3em]">LUXE</span></p>
+    <div class="flex gap-8 text-xs uppercase tracking-[0.15em]">
+      <a href="#home" class="hover:text-gold">Home</a><a href="#services" class="hover:text-gold">Services</a><a href="#contact" class="hover:text-gold">Contact</a>
+    </div>
+    <div class="flex gap-6 text-xs uppercase tracking-[0.15em]">
+      <a href="#" aria-label="Instagram" class="hover:text-gold">Instagram</a>
+      <a href="#" aria-label="WhatsApp" class="hover:text-gold">WhatsApp</a>
+    </div>
+  </div>
+  <p class="text-center text-[11px] mt-10 text-offwhite/25 tracking-wide">© 2026 Smiledzine Luxe. All rights reserved.</p>
+</footer>
+
+<a href="https://wa.me/919000011223" target="_blank" class="fixed bottom-6 right-6 bg-navy w-14 h-14 rounded-full flex items-center justify-center shadow-xl z-50 border border-gold/40" aria-label="Chat on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#E4D3A1" class="w-6 h-6"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8.9 3.8 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.3-6.2-3.5-8.4zM12 21.9c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.9 9.9 0 1 1 21.9 12c0 5.5-4.4 9.9-9.9 9.9zm5.4-7.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.5-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.9-2-.2-.6-.5-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const track = document.getElementById('testiTrack');
+  const dots = document.querySelectorAll('.dot');
+  let idx = 0;
+  function goTo(i){
+    idx = i;
+    track.style.transform = `translateX(-${i*100}%)`;
+    dots.forEach((d,j)=> { d.classList.toggle('bg-gold', j===i); d.classList.toggle('bg-offwhite/30', j!==i); });
+  }
+  dots.forEach(d => d.addEventListener('click', () => goTo(parseInt(d.dataset.i))));
+  setInterval(() => goTo((idx+1)%dots.length), 6000);
+</script>
+</body>
+</html>

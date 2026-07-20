@@ -1,0 +1,292 @@
+/* =========================================================
+   SmileDzine — Design Tokens & Signature System
+   Signature element: the "Smile Arc" — a hand-drawn dental
+   arch line that draws itself on load/scroll and reappears
+   as a divider, underline, and bullet throughout the site.
+   ========================================================= */
+
+:root{
+  --purple:        #7E22C9;
+  --purple-rgba:   rgba(126,34,201,0.79);
+  --purple-light:  #A855F7;
+  --purple-deep:   #5B1596;
+  --purple-soft:   #F6EFFE;
+  --purple-line:   #E7D9FB;
+  --ink:           #1E1425;
+  --muted:         #6B6273;
+  --white:         #FFFFFF;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'Space Grotesk', sans-serif;
+}
+
+*{ scroll-behavior: smooth; }
+
+body{
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-display{
+  font-family: var(--font-display);
+}
+
+.font-mono{ font-family: var(--font-mono); letter-spacing: .08em; }
+
+/* ---------- Selection & focus ---------- */
+::selection{ background: var(--purple-light); color: #fff; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+  outline: 2px solid var(--purple);
+  outline-offset: 3px;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar{ width: 10px; }
+::-webkit-scrollbar-track{ background: var(--purple-soft); }
+::-webkit-scrollbar-thumb{ background: var(--purple-light); border-radius: 10px; }
+
+/* =========================================================
+   SIGNATURE: Smile Arc
+   ========================================================= */
+.smile-arc-draw{
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: drawArc 1.8s cubic-bezier(.65,0,.35,1) forwards;
+}
+@keyframes drawArc{
+  to{ stroke-dashoffset: 0; }
+}
+
+.arc-divider{
+  display:block;
+  width: 100%;
+  height: 40px;
+}
+
+/* Underline arc for nav links */
+.nav-link{ position: relative; }
+.nav-link .underline-arc{
+  position:absolute;
+  left:50%;
+  bottom:-8px;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 10px;
+  opacity: 0;
+  transition: opacity .25s ease, width .25s ease;
+}
+.nav-link:hover .underline-arc,
+.nav-link.active .underline-arc{
+  opacity: 1;
+  width: 34px;
+}
+
+/* =========================================================
+   Reveal on scroll
+   ========================================================= */
+.reveal{
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.in-view{
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1{ transition-delay: .08s; }
+.reveal-delay-2{ transition-delay: .16s; }
+.reveal-delay-3{ transition-delay: .24s; }
+.reveal-delay-4{ transition-delay: .32s; }
+
+@media (prefers-reduced-motion: reduce){
+  .reveal, .smile-arc-draw, *{ animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* =========================================================
+   Header / Nav
+   ========================================================= */
+.site-header{
+  backdrop-filter: saturate(180%) blur(14px);
+  background: rgba(255,255,255,0.85);
+  border-bottom: 1px solid var(--purple-line);
+}
+.site-header.scrolled{
+  box-shadow: 0 8px 30px -12px rgba(126,34,201,0.25);
+}
+
+.logo-mark{
+  filter: drop-shadow(0 2px 6px rgba(126,34,201,.35));
+}
+
+.mobile-menu{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.mobile-menu.open{ max-height: 480px; }
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+.btn-primary{
+  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-deep) 100%);
+  color: #fff;
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+  box-shadow: 0 10px 25px -8px rgba(126,34,201,.55);
+}
+.btn-primary:hover{
+  transform: translateY(-3px);
+  filter: brightness(1.07);
+  box-shadow: 0 16px 34px -10px rgba(126,34,201,.65);
+}
+.btn-primary:active{ transform: translateY(-1px); }
+
+.btn-outline{
+  border: 1.5px solid var(--purple);
+  color: var(--purple);
+  transition: all .25s ease;
+}
+.btn-outline:hover{
+  background: var(--purple);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   Cards
+   ========================================================= */
+.tooth-card{
+  background: #fff;
+  border: 1px solid var(--purple-line);
+  border-radius: 28px 28px 28px 6px;
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.tooth-card:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -20px rgba(126,34,201,.35);
+  border-color: var(--purple-light);
+}
+
+.icon-badge{
+  background: var(--purple-soft);
+  color: var(--purple);
+  transition: background .3s ease, color .3s ease, transform .3s ease;
+}
+.tooth-card:hover .icon-badge{
+  background: var(--purple);
+  color: #fff;
+  transform: rotate(-8deg) scale(1.08);
+}
+
+/* =========================================================
+   Hero blob / ambient motion
+   ========================================================= */
+.blob{
+  position:absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity:.35;
+  animation: floatBlob 9s ease-in-out infinite;
+}
+@keyframes floatBlob{
+  0%,100%{ transform: translate(0,0) scale(1); }
+  50%{ transform: translate(20px,-30px) scale(1.08); }
+}
+
+/* =========================================================
+   Counters
+   ========================================================= */
+.counter-num{ font-variant-numeric: tabular-nums; }
+
+/* =========================================================
+   Carousel (Testimonials)
+   ========================================================= */
+.carousel-track{
+  display:flex;
+  transition: transform .6s cubic-bezier(.65,0,.35,1);
+}
+.carousel-slide{ flex: 0 0 100%; }
+
+.dot{
+  width:8px; height:8px; border-radius:50%;
+  background: var(--purple-line);
+  transition: all .3s ease;
+  cursor:pointer;
+}
+.dot.active{ background: var(--purple); width: 26px; border-radius: 6px; }
+
+/* =========================================================
+   Gallery lightbox
+   ========================================================= */
+.filter-btn.is-active-filter{ background: var(--purple); color: #fff; border-color: var(--purple); }
+
+.gallery-item{ cursor: pointer; overflow:hidden; border-radius: 20px; }
+.gallery-item img, .gallery-item .ph{ transition: transform .5s ease; }
+.gallery-item:hover img, .gallery-item:hover .ph{ transform: scale(1.08); }
+
+#lightbox{
+  position: fixed; inset: 0; background: rgba(30,20,37,.92);
+  display:none; align-items:center; justify-content:center; z-index: 100;
+  backdrop-filter: blur(6px);
+}
+#lightbox.open{ display:flex; }
+
+/* =========================================================
+   Forms
+   ========================================================= */
+.field-input{
+  border: 1.5px solid var(--purple-line);
+  background: #fff;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+.field-input:focus{
+  border-color: var(--purple);
+  box-shadow: 0 0 0 4px rgba(126,34,201,.12);
+  outline: none;
+}
+.field-label{ color: var(--muted); }
+
+.success-check{
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: checkDraw .6s ease .1s forwards;
+}
+@keyframes checkDraw{ to{ stroke-dashoffset: 0; } }
+
+/* =========================================================
+   Floating WhatsApp
+   ========================================================= */
+.whatsapp-float{
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 60;
+  box-shadow: 0 12px 30px -8px rgba(37,211,102,.55);
+  animation: pulseWA 2.6s ease-in-out infinite;
+}
+@keyframes pulseWA{
+  0%,100%{ box-shadow: 0 12px 30px -8px rgba(37,211,102,.55); }
+  50%{ box-shadow: 0 12px 40px -4px rgba(37,211,102,.8); }
+}
+
+/* Back to top */
+.back-top{
+  position: fixed; right: 22px; bottom: 90px; z-index: 60;
+  opacity:0; pointer-events:none; transition: opacity .3s ease, transform .3s ease;
+  transform: translateY(10px);
+}
+.back-top.show{ opacity:1; pointer-events:auto; transform: translateY(0); }
+
+/* Marquee for highlights strip */
+.marquee-track{
+  display:flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+@keyframes marquee{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-50%); }
+}

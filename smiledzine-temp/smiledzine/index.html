@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Home | SmileDzine Dental Studio</title>
+<meta name="description" content="SmileDzine is a modern dental studio in Aurangabad offering cosmetic dentistry, implants, orthodontics and family dental care." />
+<meta name="theme-color" content="#7E22C9" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='22' fill='%237E22C9'/%3E%3Cpath d='M12 20C14 28 18 32 24 32C30 32 34 28 36 20' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          purple: { DEFAULT: '#7E22C9', light: '#A855F7', deep: '#5B1596', soft: '#F6EFFE', line: '#E7D9FB' },
+          ink: '#1E1425',
+          muted: '#6B6273'
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          body: ['Plus Jakarta Sans', 'sans-serif'],
+          mono: ['Space Grotesk', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased font-body">
+  <!-- ============ HEADER ============ -->
+  <header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50 transition-shadow">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <svg class="logo-mark w-10 h-10" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="22" fill="#F6EFFE"/>
+          <path d="M12 20C14 28 18 32 24 32C30 32 34 28 36 20" stroke="#7E22C9" stroke-width="3" stroke-linecap="round" class="smile-arc-draw"/>
+          <circle cx="17" cy="17" r="2" fill="#7E22C9"/>
+          <circle cx="31" cy="17" r="2" fill="#7E22C9"/>
+        </svg>
+        <span class="font-display text-2xl leading-none"><span class="text-[#1E1425]">smile</span><span class="text-[#7E22C9] font-semibold">dzine</span></span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-9">
+        <a href="index.html" class="nav-link font-medium text-sm text-[#1E1425]/80 hover:text-[#7E22C9] transition-colors">Home
+          <svg class="underline-arc" viewBox="0 0 34 10"><path d="M2 2C6 8 12 8 17 8C22 8 28 8 32 2" stroke="#7E22C9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="about.html" class="nav-link font-medium text-sm text-[#1E1425]/80 hover:text-[#7E22C9] transition-colors">About Us
+          <svg class="underline-arc" viewBox="0 0 34 10"><path d="M2 2C6 8 12 8 17 8C22 8 28 8 32 2" stroke="#7E22C9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="services.html" class="nav-link font-medium text-sm text-[#1E1425]/80 hover:text-[#7E22C9] transition-colors">Services
+          <svg class="underline-arc" viewBox="0 0 34 10"><path d="M2 2C6 8 12 8 17 8C22 8 28 8 32 2" stroke="#7E22C9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="gallery.html" class="nav-link font-medium text-sm text-[#1E1425]/80 hover:text-[#7E22C9] transition-colors">Gallery
+          <svg class="underline-arc" viewBox="0 0 34 10"><path d="M2 2C6 8 12 8 17 8C22 8 28 8 32 2" stroke="#7E22C9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="testimonials.html" class="nav-link font-medium text-sm text-[#1E1425]/80 hover:text-[#7E22C9] transition-colors">Testimonials
+          <svg class="underline-arc" viewBox="0 0 34 10"><path d="M2 2C6 8 12 8 17 8C22 8 28 8 32 2" stroke="#7E22C9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="contact.html" class="nav-link font-medium text-sm text-[#1E1425]/80 hover:text-[#7E22C9] transition-colors">Contact
+          <svg class="underline-arc" viewBox="0 0 34 10"><path d="M2 2C6 8 12 8 17 8C22 8 28 8 32 2" stroke="#7E22C9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="appointment.html" class="hidden md:inline-flex btn-primary rounded-full px-5 py-2.5 text-sm font-semibold">Book Appointment</a>
+        <button id="menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-[#E7D9FB]" aria-label="Toggle menu">
+          <svg id="icon-open" class="w-5 h-5 text-[#1E1425]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg id="icon-close" class="hidden w-5 h-5 text-[#1E1425]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu lg:hidden bg-white border-t border-[#E7D9FB]">
+      <div class="flex flex-col px-6 py-4 gap-4">
+        <a href="index.html" class="nav-link font-medium text-[#1E1425]">Home</a>
+        <a href="about.html" class="nav-link font-medium text-[#1E1425]">About Us</a>
+        <a href="services.html" class="nav-link font-medium text-[#1E1425]">Services</a>
+        <a href="gallery.html" class="nav-link font-medium text-[#1E1425]">Gallery</a>
+        <a href="testimonials.html" class="nav-link font-medium text-[#1E1425]">Testimonials</a>
+        <a href="contact.html" class="nav-link font-medium text-[#1E1425]">Contact</a>
+        <a href="appointment.html" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-center">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+  <!-- ============ HERO ============ -->
+  <section class="relative pt-36 pb-24 overflow-hidden bg-white">
+    <div class="blob w-96 h-96 bg-purple-light -top-20 -left-20"></div>
+    <div class="blob w-72 h-72 bg-purple -bottom-10 right-0" style="animation-delay:2s"></div>
+
+    <div class="max-w-7xl mx-auto px-5 md:px-8 relative grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal in-view">
+        <span class="font-mono text-xs uppercase text-purple bg-purple-soft px-3 py-1.5 rounded-full">Aurangabad&rsquo;s Modern Dental Studio</span>
+        <h1 class="font-display text-5xl md:text-6xl leading-[1.05] mt-6 text-ink">
+          Design your <span class="italic text-purple">smile</span>,<br class="hidden md:block"> not just fix your teeth.
+        </h1>
+        <p class="mt-6 text-muted text-lg max-w-lg leading-relaxed">
+          SmileDzine pairs precision dental care with a studio-grade experience &mdash; gentle hands, modern equipment, and treatment plans built around how you actually live and smile.
+        </p>
+        <div class="mt-9 flex flex-wrap items-center gap-4">
+          <a href="appointment.html" class="btn-primary rounded-full px-7 py-3.5 font-semibold">Book an Appointment</a>
+          <a href="services.html" class="btn-outline rounded-full px-7 py-3.5 font-semibold">Explore Services</a>
+        </div>
+        <div class="mt-10 flex items-center gap-8">
+          <div>
+            <p class="font-display text-3xl text-ink"><span class="counter-num" data-target="4200">0</span>+</p>
+            <p class="text-xs text-muted mt-1">Smiles treated</p>
+          </div>
+          <div class="w-px h-10 bg-purple-line"></div>
+          <div>
+            <p class="font-display text-3xl text-ink"><span class="counter-num" data-target="12">0</span>+</p>
+            <p class="text-xs text-muted mt-1">Years of practice</p>
+          </div>
+          <div class="w-px h-10 bg-purple-line"></div>
+          <div>
+            <p class="font-display text-3xl text-ink">4.9<span class="text-purple">★</span></p>
+            <p class="text-xs text-muted mt-1">Patient rating</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative reveal reveal-delay-2 in-view">
+        <div class="relative rounded-[40px] bg-gradient-to-br from-purple-soft to-white border border-purple-line p-10 aspect-square flex items-center justify-center">
+          <svg viewBox="0 0 300 300" class="w-full h-full">
+            <circle cx="150" cy="150" r="120" fill="#F6EFFE"/>
+            <path d="M70 130C90 190 120 220 150 220C180 220 210 190 230 130" stroke="#7E22C9" stroke-width="6" stroke-linecap="round" fill="none" class="smile-arc-draw"/>
+            <circle cx="105" cy="110" r="7" fill="#7E22C9"/>
+            <circle cx="195" cy="110" r="7" fill="#7E22C9"/>
+            <circle cx="150" cy="150" r="145" stroke="#E7D9FB" stroke-width="2" fill="none"/>
+          </svg>
+          <div class="absolute -left-6 top-10 bg-white rounded-2xl shadow-xl shadow-purple/10 px-4 py-3 border border-purple-line reveal reveal-delay-3 in-view">
+            <p class="text-xs text-muted">Next available</p>
+            <p class="font-semibold text-ink text-sm">Today, 4:30 PM</p>
+          </div>
+          <div class="absolute -right-4 bottom-14 bg-white rounded-2xl shadow-xl shadow-purple/10 px-4 py-3 border border-purple-line reveal reveal-delay-4 in-view">
+            <p class="font-semibold text-ink text-sm">★ 4.9 / 5</p>
+            <p class="text-xs text-muted">from 800+ reviews</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE HIGHLIGHTS ============ -->
+  <section class="border-y border-purple-line bg-purple-soft/60 py-5 overflow-hidden">
+    <div class="marquee-track font-mono text-sm text-purple/80 gap-16 pr-16">
+      <div class="flex gap-16 shrink-0">
+        <span>✦ Certified Specialists</span>
+        <span>✦ Painless Procedures</span>
+        <span>✦ Modern Sterile Equipment</span>
+        <span>✦ Flexible Evening Hours</span>
+        <span>✦ Transparent Pricing</span>
+        <span>✦ Kid&ndash;Friendly Care</span>
+      </div>
+      <div class="flex gap-16 shrink-0" aria-hidden="true">
+        <span>✦ Certified Specialists</span>
+        <span>✦ Painless Procedures</span>
+        <span>✦ Modern Sterile Equipment</span>
+        <span>✦ Flexible Evening Hours</span>
+        <span>✦ Transparent Pricing</span>
+        <span>✦ Kid&ndash;Friendly Care</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT TEASER ============ -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="relative reveal">
+        <div class="rounded-[32px] bg-purple-soft aspect-[4/5] flex items-center justify-center overflow-hidden">
+          <svg viewBox="0 0 200 240" class="w-2/3">
+            <rect x="10" y="10" width="180" height="220" rx="24" fill="#EFE1FD"/>
+            <circle cx="100" cy="90" r="38" fill="#7E22C9" opacity="0.85"/>
+            <path d="M60 150C75 180 90 190 100 190C110 190 125 180 140 150" stroke="#5B1596" stroke-width="5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="absolute -bottom-6 -right-6 bg-white border border-purple-line rounded-2xl px-5 py-4 shadow-lg reveal reveal-delay-2 in-view">
+          <p class="font-display text-2xl text-purple">12+</p>
+          <p class="text-xs text-muted">Years serving Aurangabad</p>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <span class="font-mono text-xs uppercase text-purple">About SmileDzine</span>
+        <h2 class="font-display text-4xl mt-4 text-ink leading-tight">A studio built around one idea: <span class="italic text-purple">confidence</span> starts with your smile.</h2>
+        <p class="mt-5 text-muted leading-relaxed">
+          Founded in Aurangabad, SmileDzine brings together experienced dentists, gentle chairside manner, and a calm, design-led clinic environment. We treat every visit as a chance to make dental care feel less clinical and more human.
+        </p>
+        <ul class="mt-7 space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="icon-badge w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-semibold">01</span>
+            <span class="text-sm text-ink/80 pt-1">Personalised treatment plans, explained in plain language.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="icon-badge w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-semibold">02</span>
+            <span class="text-sm text-ink/80 pt-1">Digital diagnostics and sterilisation protocols you can see.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="icon-badge w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-semibold">03</span>
+            <span class="text-sm text-ink/80 pt-1">Flexible scheduling for families and working professionals.</span>
+          </li>
+        </ul>
+        <a href="about.html" class="inline-flex items-center gap-2 mt-8 font-semibold text-purple hover:gap-3 transition-all">Read our full story
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES TEASER ============ -->
+  <section class="py-24 bg-purple-soft/40">
+    <div class="max-w-7xl mx-auto px-5 md:px-8">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="font-mono text-xs uppercase text-purple">What we treat</span>
+        <h2 class="font-display text-4xl mt-4 text-ink">Care organised around your goals</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+        <div class="tooth-card p-7 reveal">
+          <div class="icon-badge w-12 h-12 rounded-2xl flex items-center justify-center text-xl">✨</div>
+          <h3 class="font-display text-xl mt-5 text-ink">Cosmetic Dentistry</h3>
+          <p class="text-sm text-muted mt-2 leading-relaxed">Veneers, bonding and smile makeovers designed to look natural.</p>
+        </div>
+        <div class="tooth-card p-7 reveal reveal-delay-1">
+          <div class="icon-badge w-12 h-12 rounded-2xl flex items-center justify-center text-xl">🦷</div>
+          <h3 class="font-display text-xl mt-5 text-ink">Dental Implants</h3>
+          <p class="text-sm text-muted mt-2 leading-relaxed">Permanent, natural-feeling replacements for missing teeth.</p>
+        </div>
+        <div class="tooth-card p-7 reveal reveal-delay-2">
+          <div class="icon-badge w-12 h-12 rounded-2xl flex items-center justify-center text-xl">📐</div>
+          <h3 class="font-display text-xl mt-5 text-ink">Orthodontics</h3>
+          <p class="text-sm text-muted mt-2 leading-relaxed">Braces and clear aligners for every age, tracked digitally.</p>
+        </div>
+        <div class="tooth-card p-7 reveal">
+          <div class="icon-badge w-12 h-12 rounded-2xl flex items-center justify-center text-xl">⚡</div>
+          <h3 class="font-display text-xl mt-5 text-ink">Teeth Whitening</h3>
+          <p class="text-sm text-muted mt-2 leading-relaxed">In-studio and take-home whitening, calibrated to your teeth.</p>
+        </div>
+        <div class="tooth-card p-7 reveal reveal-delay-1">
+          <div class="icon-badge w-12 h-12 rounded-2xl flex items-center justify-center text-xl">🩺</div>
+          <h3 class="font-display text-xl mt-5 text-ink">Root Canal Therapy</h3>
+          <p class="text-sm text-muted mt-2 leading-relaxed">Microscope-guided, low-discomfort root canal treatment.</p>
+        </div>
+        <div class="tooth-card p-7 reveal reveal-delay-2">
+          <div class="icon-badge w-12 h-12 rounded-2xl flex items-center justify-center text-xl">🧒</div>
+          <h3 class="font-display text-xl mt-5 text-ink">Pediatric Dentistry</h3>
+          <p class="text-sm text-muted mt-2 leading-relaxed">Friendly, patient care that builds good habits early.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-12 reveal">
+        <a href="services.html" class="btn-outline rounded-full px-7 py-3.5 font-semibold inline-block">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="reveal">
+        <p class="font-display text-4xl text-purple"><span class="counter-num" data-target="4200">0</span>+</p>
+        <p class="text-sm text-muted mt-2">Patients treated</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p class="font-display text-4xl text-purple"><span class="counter-num" data-target="12">0</span></p>
+        <p class="text-sm text-muted mt-2">Years of experience</p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <p class="font-display text-4xl text-purple"><span class="counter-num" data-target="98">0</span>%</p>
+        <p class="text-sm text-muted mt-2">Treatment success rate</p>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <p class="font-display text-4xl text-purple"><span class="counter-num" data-target="9">0</span></p>
+        <p class="text-sm text-muted mt-2">Expert dentists</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIAL TEASER ============ -->
+  <section class="py-24 bg-purple-soft/40">
+    <div class="max-w-4xl mx-auto px-5 md:px-8 text-center reveal">
+      <span class="font-mono text-xs uppercase text-purple">Patient stories</span>
+      <h2 class="font-display text-4xl mt-4 text-ink">Real smiles, real words</h2>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-5 md:px-8 mt-14 reveal reveal-delay-1" data-carousel>
+      <div class="overflow-hidden rounded-[28px] bg-white border border-purple-line">
+        <div class="carousel-track">
+          <div class="carousel-slide p-10 text-center">
+            <p class="text-purple text-xl mb-4">★★★★★</p>
+            <p class="font-display text-xl text-ink leading-relaxed">&ldquo;I used to dread dental visits. SmileDzine actually made me look forward to my checkups.&rdquo;</p>
+            <p class="text-sm text-muted mt-5">&mdash; Ananya R., Braces patient</p>
+          </div>
+          <div class="carousel-slide p-10 text-center">
+            <p class="text-purple text-xl mb-4">★★★★★</p>
+            <p class="font-display text-xl text-ink leading-relaxed">&ldquo;My implant procedure was smooth from consult to recovery. Genuinely painless.&rdquo;</p>
+            <p class="text-sm text-muted mt-5">&mdash; Farhan K., Implant patient</p>
+          </div>
+          <div class="carousel-slide p-10 text-center">
+            <p class="text-purple text-xl mb-4">★★★★★</p>
+            <p class="font-display text-xl text-ink leading-relaxed">&ldquo;My son actually asks to go back for his cleanings. That says everything.&rdquo;</p>
+            <p class="text-sm text-muted mt-5">&mdash; Priya M., Parent</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-dots flex justify-center gap-2 mt-6"></div>
+    </div>
+    <div class="text-center mt-10 reveal">
+      <a href="testimonials.html" class="font-semibold text-purple hover:underline">Read more stories &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ============ CTA BANNER ============ -->
+  <section class="py-20">
+    <div class="max-w-6xl mx-auto px-5 md:px-8">
+      <div class="relative rounded-[36px] bg-gradient-to-br from-purple to-purple-deep px-8 md:px-16 py-16 text-center overflow-hidden reveal">
+        <div class="blob w-64 h-64 bg-white -top-16 -right-10"></div>
+        <h2 class="font-display text-3xl md:text-4xl text-white relative">Ready to redesign your smile?</h2>
+        <p class="text-white/75 mt-4 max-w-xl mx-auto relative">Book a consultation this week and get a free digital smile assessment.</p>
+        <a href="appointment.html" class="mt-8 inline-block bg-white text-purple font-semibold rounded-full px-8 py-3.5 hover:scale-105 transition-transform relative">Book Your Appointment</a>
+      </div>
+    </div>
+  </section>
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-[#1E1425] text-white/80 pt-20 pb-8 relative overflow-hidden">
+    <svg class="absolute top-0 left-0 w-full h-10 text-white" viewBox="0 0 1200 40" preserveAspectRatio="none" fill="none">
+      <path d="M0 8C150 30 300 30 450 12C600 -6 750 -6 900 12C1050 30 1150 30 1200 8" stroke="#7E22C9" stroke-width="2" opacity=".5"/>
+    </svg>
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-2.5 mb-4">
+          <svg class="w-9 h-9" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="22" fill="#2A1B38"/>
+            <path d="M12 20C14 28 18 32 24 32C30 32 34 28 36 20" stroke="#A855F7" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="17" cy="17" r="2" fill="#A855F7"/>
+            <circle cx="31" cy="17" r="2" fill="#A855F7"/>
+          </svg>
+          <span class="font-display text-xl text-white">smile<span class="text-[#A855F7] font-semibold">dzine</span></span>
+        </div>
+        <p class="text-sm leading-relaxed text-white/60">A modern dental studio designed around one idea &mdash; every smile deserves an intentional design. Gentle care, precise craft.</p>
+        <div class="flex gap-3 mt-5">
+          <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#7E22C9] flex items-center justify-center transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#7E22C9] flex items-center justify-center transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.1 0 4.1.1 1.1 0 1.8.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.5.4 1.2.4 2.3.1 1 .1 1.4.1 4.1s0 3.1-.1 4.1c0 1.1-.2 1.8-.4 2.3-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.5.2-1.2.4-2.3.4-1 .1-1.4.1-4.1.1s-3.1 0-4.1-.1c-1.1 0-1.8-.2-2.3-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.5-.4-1.2-.4-2.3C2 15.1 2 14.7 2 12s0-3.1.1-4.1c0-1.1.2-1.8.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.5-.2 1.2-.4 2.3-.4C8.9 2 9.3 2 12 2Zm0 1.8c-2.6 0-3 0-4 .1-.9 0-1.4.2-1.7.3-.4.2-.7.3-1 .6-.3.3-.5.6-.6 1-.1.3-.3.8-.3 1.7-.1 1-.1 1.4-.1 4s0 3 .1 4c0 .9.2 1.4.3 1.7.1.4.3.7.6 1 .3.3.6.5 1 .6.3.1.8.3 1.7.3 1 .1 1.4.1 4 .1s3 0 4-.1c.9 0 1.4-.2 1.7-.3.4-.1.7-.3 1-.6.3-.3.5-.6.6-1 .1-.3.3-.8.3-1.7.1-1 .1-1.4.1-4s0-3-.1-4c0-.9-.2-1.4-.3-1.7-.1-.4-.3-.7-.6-1-.3-.3-.6-.5-1-.6-.3-.1-.8-.3-1.7-.3-1-.1-1.4-.1-4-.1Zm0 3.5a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 1.8a2.9 2.9 0 1 0 0 5.8 2.9 2.9 0 0 0 0-5.8Zm5-2a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/></svg></a>
+          <a href="#" aria-label="Twitter" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#7E22C9] flex items-center justify-center transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.9 2H22l-7 8 8.2 12h-6.4l-5-6.7-5.8 6.7H2.6l7.5-8.6L2.3 2h6.5l4.5 6.1L18.9 2Zm-1.1 18h1.8L7.3 4H5.4l12.4 16Z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-display text-lg text-white mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm text-white/60">
+          <li><a href="about.html" class="hover:text-[#A855F7] transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-[#A855F7] transition-colors">Services</a></li>
+          <li><a href="gallery.html" class="hover:text-[#A855F7] transition-colors">Gallery</a></li>
+          <li><a href="testimonials.html" class="hover:text-[#A855F7] transition-colors">Testimonials</a></li>
+          <li><a href="appointment.html" class="hover:text-[#A855F7] transition-colors">Book Appointment</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display text-lg text-white mb-4">Services</h4>
+        <ul class="space-y-2.5 text-sm text-white/60">
+          <li><a href="services.html" class="hover:text-[#A855F7] transition-colors">Cosmetic Dentistry</a></li>
+          <li><a href="services.html" class="hover:text-[#A855F7] transition-colors">Dental Implants</a></li>
+          <li><a href="services.html" class="hover:text-[#A855F7] transition-colors">Orthodontics</a></li>
+          <li><a href="services.html" class="hover:text-[#A855F7] transition-colors">Teeth Whitening</a></li>
+          <li><a href="services.html" class="hover:text-[#A855F7] transition-colors">Pediatric Dentistry</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display text-lg text-white mb-4">Visit Us</h4>
+        <ul class="space-y-3 text-sm text-white/60">
+          <li class="flex gap-2"><span>📍</span> 204 Meadow Lane, Aurangabad, MH</li>
+          <li class="flex gap-2"><span>📞</span> +91 98765 43210</li>
+          <li class="flex gap-2"><span>✉️</span> hello@smiledzine.in</li>
+          <li class="flex gap-2"><span>🕘</span> Mon&ndash;Sat, 9:00&ndash;19:00</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 md:px-8 mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/40">
+      <p>&copy; 2026 SmileDzine Dental Studio. All rights reserved.</p>
+      <p>Designed with care for confident smiles.</p>
+    </div>
+  </footer>
+
+  <!-- Floating actions -->
+  <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="whatsapp-float w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center" aria-label="Chat on WhatsApp">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.2.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+  </a>
+  <button id="back-top" class="back-top w-11 h-11 rounded-full bg-white border border-[#E7D9FB] shadow-lg flex items-center justify-center text-[#7E22C9]" aria-label="Back to top">
+    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+  <!-- Lightbox (used on Gallery page, harmless elsewhere) -->
+  <div id="lightbox">
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white/80 hover:text-white text-3xl leading-none">&times;</button>
+    <div class="text-center">
+      <div id="lightbox-img" class="ph w-[90vw] max-w-2xl h-[55vh] rounded-2xl mx-auto"></div>
+      <p id="lightbox-caption" class="text-white/70 mt-4 text-sm"></p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

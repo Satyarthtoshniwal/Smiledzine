@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Book Appointment | SmileDzine Dental Studio</title>
+<meta name="description" content="Book a dental appointment at SmileDzine Dental Studio - no login required." />
+<meta name="theme-color" content="#7E22C9" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='22' fill='%237E22C9'/%3E%3Cpath d='M12 20C14 28 18 32 24 32C30 32 34 28 36 20' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          purple: { DEFAULT: '#7E22C9', light: '#A855F7', deep: '#5B1596', soft: '#F6EFFE', line: '#E7D9FB' },
+          ink: '#1E1425',
+          muted: '#6B6273'
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          body: ['Plus Jakarta Sans', 'sans-serif'],
+          mono: ['Space Grotesk', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased font-body">
+  <!-- ============ HEADER ============ -->
+  <header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50 transition-shadow">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center gap-2.5 group">
+        <svg class="logo-mark w-10 h-10" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="22" fill="#F6EFFE"/>
+          <path d="M12 20C14 28 18 32 24 32C30 32 34 28 36 20" stroke="#7E22C9" stroke-width="3" stroke-linecap="round" class="smile-arc-draw"/>
+          <circle cx="17" cy="17" r="2" fill="#7E22C9"/>
+          <circle cx="31" cy="17" r="2" fill="#7E22C9"/>
+        </svg>
+        <span class="font-display text-2xl leading-none"><span class="text-[#1E1425]">smile</span><span class="text-[#7E22C9] font-semibold">dzine</span></span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-9">
+        <a href="index.html" class="nav-link font-medium text-sm text-[#1E1425]/80 hover:text-[#7E22C9] transition-colors">Home
+          <svg class="underline-arc" viewBox="0 0 34 10"><path d="M2 2C6 8 12 8 17 8C22 8 28 8 32 2" stroke="#7E22C9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="about.html" class="nav-link font-medium text-sm text-[#1E1425]/80 hover:text-[#7E22C9] transition-colors">About Us
+          <svg class="underline-arc" viewBox="0 0 34 10"><path d="M2 2C6 8 12 8 17 8C22 8 28 8 32 2" stroke="#7E22C9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="services.html" class="nav-link font-medium text-sm text-[#1E1425]/80 hover:text-[#7E22C9] transition-colors">Services
+          <svg class="underline-arc" viewBox="0 0 34 10"><path d="M2 2C6 8 12 8 17 8C22 8 28 8 32 2" stroke="#7E22C9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="gallery.html" class="nav-link font-medium text-sm text-[#1E1425]/80 hover:text-[#7E22C9] transition-colors">Gallery
+          <svg class="underline-arc" viewBox="0 0 34 10"><path d="M2 2C6 8 12 8 17 8C22 8 28 8 32 2" stroke="#7E22C9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="testimonials.html" class="nav-link font-medium text-sm text-[#1E1425]/80 hover:text-[#7E22C9] transition-colors">Testimonials
+          <svg class="underline-arc" viewBox="0 0 34 10"><path d="M2 2C6 8 12 8 17 8C22 8 28 8 32 2" stroke="#7E22C9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="contact.html" class="nav-link font-medium text-sm text-[#1E1425]/80 hover:text-[#7E22C9] transition-colors">Contact
+          <svg class="underline-arc" viewBox="0 0 34 10"><path d="M2 2C6 8 12 8 17 8C22 8 28 8 32 2" stroke="#7E22C9" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="appointment.html" class="hidden md:inline-flex btn-primary rounded-full px-5 py-2.5 text-sm font-semibold">Book Appointment</a>
+        <button id="menu-btn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-[#E7D9FB]" aria-label="Toggle menu">
+          <svg id="icon-open" class="w-5 h-5 text-[#1E1425]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg id="icon-close" class="hidden w-5 h-5 text-[#1E1425]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu lg:hidden bg-white border-t border-[#E7D9FB]">
+      <div class="flex flex-col px-6 py-4 gap-4">
+        <a href="index.html" class="nav-link font-medium text-[#1E1425]">Home</a>
+        <a href="about.html" class="nav-link font-medium text-[#1E1425]">About Us</a>
+        <a href="services.html" class="nav-link font-medium text-[#1E1425]">Services</a>
+        <a href="gallery.html" class="nav-link font-medium text-[#1E1425]">Gallery</a>
+        <a href="testimonials.html" class="nav-link font-medium text-[#1E1425]">Testimonials</a>
+        <a href="contact.html" class="nav-link font-medium text-[#1E1425]">Contact</a>
+        <a href="appointment.html" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-center">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="relative pt-36 pb-16 bg-purple-soft/50 overflow-hidden">
+    <div class="blob w-80 h-80 bg-purple-light -top-24 -right-10"></div>
+    <div class="max-w-5xl mx-auto px-5 md:px-8 text-center relative reveal in-view">
+      <span class="font-mono text-xs uppercase text-purple">Book an appointment</span>
+      <h1 class="font-display text-5xl mt-5 text-ink">Reserve your visit</h1>
+      <p class="text-muted mt-5 max-w-xl mx-auto">Pick a service and a time that works &mdash; no account or login required. We&rsquo;ll confirm by phone within a few hours.</p>
+    </div>
+  </section>
+
+  <!-- ============ BOOKING FORM ============ -->
+  <section class="py-24">
+    <div class="max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-5 gap-12">
+
+      <div class="lg:col-span-3 reveal">
+        <div class="tooth-card p-8 md:p-10">
+          <form data-fake-submit="appointment-success" class="space-y-5">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="field-label text-xs font-medium mb-1.5 block">Full Name</label>
+                <input type="text" name="name" required class="field-input w-full rounded-xl px-4 py-3 text-sm" placeholder="Your name">
+                <p class="text-xs text-red-500 mt-1 hidden" data-error-for="name">Please enter your name.</p>
+              </div>
+              <div>
+                <label class="field-label text-xs font-medium mb-1.5 block">Phone Number</label>
+                <input type="tel" name="phone" required class="field-input w-full rounded-xl px-4 py-3 text-sm" placeholder="+91 00000 00000">
+                <p class="text-xs text-red-500 mt-1 hidden" data-error-for="phone">Please enter a phone number.</p>
+              </div>
+            </div>
+
+            <div>
+              <label class="field-label text-xs font-medium mb-1.5 block">Email Address</label>
+              <input type="email" name="email" required class="field-input w-full rounded-xl px-4 py-3 text-sm" placeholder="you@email.com">
+              <p class="text-xs text-red-500 mt-1 hidden" data-error-for="email">Please enter a valid email.</p>
+            </div>
+
+            <div>
+              <label class="field-label text-xs font-medium mb-1.5 block">Service Needed</label>
+              <select name="service" class="field-input w-full rounded-xl px-4 py-3 text-sm">
+                <option>General Checkup &amp; Cleaning</option>
+                <option>Cosmetic Dentistry</option>
+                <option>Dental Implants</option>
+                <option>Orthodontics (Braces / Aligners)</option>
+                <option>Teeth Whitening</option>
+                <option>Root Canal Therapy</option>
+                <option>Pediatric Dentistry</option>
+                <option>Emergency Visit</option>
+              </select>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="field-label text-xs font-medium mb-1.5 block">Preferred Date</label>
+                <input type="date" name="date" required class="field-input w-full rounded-xl px-4 py-3 text-sm">
+                <p class="text-xs text-red-500 mt-1 hidden" data-error-for="date">Please choose a date.</p>
+              </div>
+              <div>
+                <label class="field-label text-xs font-medium mb-1.5 block">Preferred Time</label>
+                <select name="time" class="field-input w-full rounded-xl px-4 py-3 text-sm">
+                  <option>9:00 AM &ndash; 11:00 AM</option>
+                  <option>11:00 AM &ndash; 1:00 PM</option>
+                  <option>2:00 PM &ndash; 4:00 PM</option>
+                  <option>4:00 PM &ndash; 7:00 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="field-label text-xs font-medium mb-1.5 block">Additional Notes <span class="text-muted/60">(optional)</span></label>
+              <textarea name="notes" rows="4" class="field-input w-full rounded-xl px-4 py-3 text-sm" placeholder="Any symptoms, previous treatment history, or scheduling notes..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary rounded-full px-8 py-3.5 font-semibold w-full">Confirm Appointment Request</button>
+            <p class="text-xs text-muted text-center">No login needed. A team member will call to confirm your slot.</p>
+          </form>
+
+          <div id="appointment-success" class="hidden text-center py-10">
+            <svg class="w-16 h-16 mx-auto text-purple" viewBox="0 0 52 52" fill="none">
+              <circle cx="26" cy="26" r="25" stroke="#E7D9FB" stroke-width="2"/>
+              <path class="success-check" d="M15 27l7 7 15-15" stroke="#7E22C9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <h3 class="font-display text-2xl text-ink mt-5">Request received!</h3>
+            <p class="text-muted mt-2">We&rsquo;ll call to confirm your appointment shortly. See you soon.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2 space-y-6 reveal reveal-delay-1">
+        <div class="tooth-card p-7">
+          <div class="icon-badge w-11 h-11 rounded-full flex items-center justify-center">⏱️</div>
+          <h4 class="font-display text-lg mt-4 text-ink">Same-week slots</h4>
+          <p class="text-sm text-muted mt-2">Most appointments are available within 2&ndash;3 business days.</p>
+        </div>
+        <div class="tooth-card p-7">
+          <div class="icon-badge w-11 h-11 rounded-full flex items-center justify-center">💳</div>
+          <h4 class="font-display text-lg mt-4 text-ink">Flexible payment</h4>
+          <p class="text-sm text-muted mt-2">Card, UPI and insurance-assisted plans accepted at the studio.</p>
+        </div>
+        <div class="tooth-card p-7">
+          <div class="icon-badge w-11 h-11 rounded-full flex items-center justify-center">📞</div>
+          <h4 class="font-display text-lg mt-4 text-ink">Prefer to call?</h4>
+          <p class="text-sm text-muted mt-2">Reach our front desk directly at <span class="text-purple font-semibold">+91 98765 43210</span>.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-[#1E1425] text-white/80 pt-20 pb-8 relative overflow-hidden">
+    <svg class="absolute top-0 left-0 w-full h-10 text-white" viewBox="0 0 1200 40" preserveAspectRatio="none" fill="none">
+      <path d="M0 8C150 30 300 30 450 12C600 -6 750 -6 900 12C1050 30 1150 30 1200 8" stroke="#7E22C9" stroke-width="2" opacity=".5"/>
+    </svg>
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-2.5 mb-4">
+          <svg class="w-9 h-9" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="22" fill="#2A1B38"/>
+            <path d="M12 20C14 28 18 32 24 32C30 32 34 28 36 20" stroke="#A855F7" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="17" cy="17" r="2" fill="#A855F7"/>
+            <circle cx="31" cy="17" r="2" fill="#A855F7"/>
+          </svg>
+          <span class="font-display text-xl text-white">smile<span class="text-[#A855F7] font-semibold">dzine</span></span>
+        </div>
+        <p class="text-sm leading-relaxed text-white/60">A modern dental studio designed around one idea &mdash; every smile deserves an intentional design. Gentle care, precise craft.</p>
+        <div class="flex gap-3 mt-5">
+          <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#7E22C9] flex items-center justify-center transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#7E22C9] flex items-center justify-center transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.1 0 4.1.1 1.1 0 1.8.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.5.4 1.2.4 2.3.1 1 .1 1.4.1 4.1s0 3.1-.1 4.1c0 1.1-.2 1.8-.4 2.3-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.5.2-1.2.4-2.3.4-1 .1-1.4.1-4.1.1s-3.1 0-4.1-.1c-1.1 0-1.8-.2-2.3-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.5-.4-1.2-.4-2.3C2 15.1 2 14.7 2 12s0-3.1.1-4.1c0-1.1.2-1.8.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.5-.2 1.2-.4 2.3-.4C8.9 2 9.3 2 12 2Zm0 1.8c-2.6 0-3 0-4 .1-.9 0-1.4.2-1.7.3-.4.2-.7.3-1 .6-.3.3-.5.6-.6 1-.1.3-.3.8-.3 1.7-.1 1-.1 1.4-.1 4s0 3 .1 4c0 .9.2 1.4.3 1.7.1.4.3.7.6 1 .3.3.6.5 1 .6.3.1.8.3 1.7.3 1 .1 1.4.1 4 .1s3 0 4-.1c.9 0 1.4-.2 1.7-.3.4-.1.7-.3 1-.6.3-.3.5-.6.6-1 .1-.3.3-.8.3-1.7.1-1 .1-1.4.1-4s0-3-.1-4c0-.9-.2-1.4-.3-1.7-.1-.4-.3-.7-.6-1-.3-.3-.6-.5-1-.6-.3-.1-.8-.3-1.7-.3-1-.1-1.4-.1-4-.1Zm0 3.5a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 1.8a2.9 2.9 0 1 0 0 5.8 2.9 2.9 0 0 0 0-5.8Zm5-2a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/></svg></a>
+          <a href="#" aria-label="Twitter" class="w-9 h-9 rounded-full bg-white/10 hover:bg-[#7E22C9] flex items-center justify-center transition-colors"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.9 2H22l-7 8 8.2 12h-6.4l-5-6.7-5.8 6.7H2.6l7.5-8.6L2.3 2h6.5l4.5 6.1L18.9 2Zm-1.1 18h1.8L7.3 4H5.4l12.4 16Z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-display text-lg text-white mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm text-white/60">
+          <li><a href="about.html" class="hover:text-[#A855F7] transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-[#A855F7] transition-colors">Services</a></li>
+          <li><a href="gallery.html" class="hover:text-[#A855F7] transition-colors">Gallery</a></li>
+          <li><a href="testimonials.html" class="hover:text-[#A855F7] transition-colors">Testimonials</a></li>
+          <li><a href="appointment.html" class="hover:text-[#A855F7] transition-colors">Book Appointment</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display text-lg text-white mb-4">Services</h4>
+        <ul class="space-y-2.5 text-sm text-white/60">
+          <li><a href="services.html" class="hover:text-[#A855F7] transition-colors">Cosmetic Dentistry</a></li>
+          <li><a href="services.html" class="hover:text-[#A855F7] transition-colors">Dental Implants</a></li>
+          <li><a href="services.html" class="hover:text-[#A855F7] transition-colors">Orthodontics</a></li>
+          <li><a href="services.html" class="hover:text-[#A855F7] transition-colors">Teeth Whitening</a></li>
+          <li><a href="services.html" class="hover:text-[#A855F7] transition-colors">Pediatric Dentistry</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display text-lg text-white mb-4">Visit Us</h4>
+        <ul class="space-y-3 text-sm text-white/60">
+          <li class="flex gap-2"><span>📍</span> 204 Meadow Lane, Aurangabad, MH</li>
+          <li class="flex gap-2"><span>📞</span> +91 98765 43210</li>
+          <li class="flex gap-2"><span>✉️</span> hello@smiledzine.in</li>
+          <li class="flex gap-2"><span>🕘</span> Mon&ndash;Sat, 9:00&ndash;19:00</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 md:px-8 mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/40">
+      <p>&copy; 2026 SmileDzine Dental Studio. All rights reserved.</p>
+      <p>Designed with care for confident smiles.</p>
+    </div>
+  </footer>
+
+  <!-- Floating actions -->
+  <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="whatsapp-float w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center" aria-label="Chat on WhatsApp">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.2-.4-4.5-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.2.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+  </a>
+  <button id="back-top" class="back-top w-11 h-11 rounded-full bg-white border border-[#E7D9FB] shadow-lg flex items-center justify-center text-[#7E22C9]" aria-label="Back to top">
+    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
+  <!-- Lightbox (used on Gallery page, harmless elsewhere) -->
+  <div id="lightbox">
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white/80 hover:text-white text-3xl leading-none">&times;</button>
+    <div class="text-center">
+      <div id="lightbox-img" class="ph w-[90vw] max-w-2xl h-[55vh] rounded-2xl mx-auto"></div>
+      <p id="lightbox-caption" class="text-white/70 mt-4 text-sm"></p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
